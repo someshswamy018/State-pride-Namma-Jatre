@@ -81,6 +81,11 @@ https://state-pride-namma-jatre.netlify.app
 
 ---
 
+## 📄 Project Documentation
+
+Detailed architecture and workflow report available here:
+
+[View Full Project Report](docs/Jatre_Namma_Pride_Complete_Architecture_and_UI_Report.pdf)
 ## 📸 Screenshots
 
 Project screenshots are available inside the screenshots folder.
