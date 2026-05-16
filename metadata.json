@@ -1,0 +1,6 @@
+{
+  "name": "JATRE - Village Fair Guide",
+  "description": "Your Digital Guide to Village Fair - Discover the rich cultural heritage of Indian temple festivals.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": []
+}

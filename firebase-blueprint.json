@@ -1,0 +1,219 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "Registered fair visitor",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "fullName": { "type": "string" },
+        "phoneNumber": { "type": "string" },
+        "email": { "type": "string" },
+        "age": { "type": "number" },
+        "gender": { "type": "string" },
+        "bloodGroup": { "type": "string" },
+        "village": { "type": "string" },
+        "userType": { "type": "string" },
+        "address": { "type": "string" },
+        "profilePhotoUrl": { "type": "string" },
+        "idProofType": { "type": "string" },
+        "idProofUrl": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "fullName", "phoneNumber", "age", "gender", "bloodGroup", "village", "userType", "address", "idProofType"]
+    },
+    "LiveSchedule": {
+      "title": "Live Schedule",
+      "description": "Festival events and schedule",
+      "type": "object",
+      "properties": {
+        "eventId": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "date": { "type": "string" },
+        "startTime": { "type": "string" },
+        "endTime": { "type": "string" },
+        "category": { "type": "string" },
+        "status": { "type": "string" },
+        "location": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["eventId", "title", "date", "startTime", "endTime"]
+    },
+    "LostFound": {
+      "title": "Lost & Found",
+      "description": "Lost and found items reported by users",
+      "type": "object",
+      "properties": {
+        "reportId": { "type": "string" },
+        "type": { "type": "string", "enum": ["lost", "found"] },
+        "fullName": { "type": "string" },
+        "phoneNumber": { "type": "string" },
+        "village": { "type": "string" },
+        "itemName": { "type": "string" },
+        "category": { "type": "string" },
+        "description": { "type": "string" },
+        "location": { "type": "string" },
+        "dateTime": { "type": "string" },
+        "contactNumber": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "status": { "type": "string", "enum": ["pending", "resolved", "urgent"] },
+        "emergency": { "type": "boolean" },
+        "createdBy": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "uploadedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["reportId", "type", "itemName", "category", "location", "createdBy"]
+    },
+    "CulturalStory": {
+      "title": "Cultural Story",
+      "description": "Cultural stories and history of the village/festival",
+      "type": "object",
+      "properties": {
+        "storyId": { "type": "string" },
+        "title": { "type": "string" },
+        "shortDescription": { "type": "string" },
+        "fullStory": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "category": { "type": "string" },
+        "language": { "type": "string" },
+        "audioUrl": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["storyId", "title", "fullStory"]
+    },
+    "EmergencyContact": {
+      "title": "Emergency Contact",
+      "description": "Emergency service contact details",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "contactNumber": { "type": "string" },
+        "type": { "type": "string", "enum": ["police", "ambulance", "medical", "volunteer"] },
+        "location": { "type": "string" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "title", "contactNumber", "type"]
+    },
+    "SafetyGuideline": {
+      "title": "Safety Guideline",
+      "description": "Safety tips and instructions",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "category": { "type": "string" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "title", "description", "category"]
+    },
+    "EmergencyMessage": {
+      "title": "Emergency Message",
+      "description": "Messages sent by users for emergency help",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "recipient": { "type": "string" },
+        "message": { "type": "string" },
+        "status": { "type": "string", "enum": ["sent", "read", "resolved"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "message", "recipient", "createdAt"]
+    },
+    "ParkingLocation": {
+      "title": "Parking Location",
+      "description": "Details about parking areas and safety spots",
+      "type": "object",
+      "properties": {
+        "locationId": { "type": "string" },
+        "name": { "type": "string" },
+        "type": { "type": "string", "enum": ["parking", "police", "medical", "temple", "water", "exit"] },
+        "latitude": { "type": "number" },
+        "longitude": { "type": "number" },
+        "capacity": { "type": "string" },
+        "status": { "type": "string" },
+        "description": { "type": "string" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["locationId", "name", "type", "latitude", "longitude"]
+    },
+    "SafetyAlert": {
+      "title": "Safety Alert",
+      "description": "Real-time safety alerts for the festival",
+      "type": "object",
+      "properties": {
+        "alertId": { "type": "string" },
+        "title": { "type": "string" },
+        "message": { "type": "string" },
+        "type": { "type": "string", "enum": ["info", "warning", "emergency"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["alertId", "title", "message", "type"]
+    },
+    "Announcement": {
+      "title": "Announcement",
+      "description": "Festival announcements and notices",
+      "type": "object",
+      "properties": {
+        "announcementId": { "type": "string" },
+        "title": { "type": "string" },
+        "message": { "type": "string" },
+        "type": { "type": "string", "enum": ["emergency", "parking", "missing", "notice"] },
+        "priority": { "type": "string", "enum": ["high", "medium", "low"] },
+        "iconType": { "type": "string" },
+        "isNew": { "type": "boolean" },
+        "relatedLocation": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["announcementId", "title", "message", "type"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": "User",
+      "description": "User profile data"
+    },
+    "live_schedule/{eventId}": {
+      "schema": "LiveSchedule",
+      "description": "Festival event records"
+    },
+    "lost_found/{reportId}": {
+      "schema": "LostFound",
+      "description": "Lost and found items"
+    },
+    "cultural_stories/{storyId}": {
+      "schema": "CulturalStory",
+      "description": "Historical and cultural stories"
+    },
+    "emergency_messages/{id}": {
+      "schema": "EmergencyMessage",
+      "description": "Messages from users needing emergency help"
+    },
+    "parking_locations/{locationId}": {
+      "schema": "ParkingLocation",
+      "description": "Parking and safety resource locations"
+    },
+    "safety_alerts/{alertId}": {
+      "schema": "SafetyAlert",
+      "description": "Safety and crowd alerts"
+    },
+    "announcements/{announcementId}": {
+      "schema": "Announcement",
+      "description": "Festival announcements"
+    },
+    "emergency_contacts/{id}": {
+      "schema": "EmergencyContact",
+      "description": "Emergency service contacts"
+    },
+    "safety_guidelines/{id}": {
+      "schema": "SafetyGuideline",
+      "description": "Safety instructions and tips"
+    }
+  }
+}
